@@ -1,0 +1,77 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="ItemBarcode" columnCount="3" pageWidth="272" pageHeight="42" columnWidth="90" columnSpacing="1" leftMargin="0" rightMargin="0" topMargin="0" bottomMargin="0" uuid="73410476-5286-4fd3-94b6-10c759668281">
+	<property name="ireport.zoom" value="4.715895382000004"/>
+	<property name="ireport.x" value="0"/>
+	<property name="ireport.y" value="0"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="DutaJayaDataAdapter.xml"/>
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<parameter name="ids" class="java.lang.String" nestedType="java.lang.Integer">
+		<parameterDescription><![CDATA['1f7391be-02a1-4a09-a42b-d0e461fbb9f0;3', 'ea611751-552f-493a-8522-2681f73c3d06;2','dafd2943-5e56-43c0-9913-943951ec6f01;4']]></parameterDescription>
+	</parameter>
+	<queryString>
+		<![CDATA[select * from fn_inv_item_barcode(ARRAY[$P!{ids}]) as
+	(kode varchar, nama_barang varchar, harga numeric(18,2))]]>
+	</queryString>
+	<field name="kode" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="kode"/>
+	</field>
+	<field name="nama_barang" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nama_barang"/>
+	</field>
+	<field name="harga" class="java.math.BigDecimal">
+		<property name="com.jaspersoft.studio.field.label" value="harga"/>
+	</field>
+	<background>
+		<band splitType="Stretch"/>
+	</background>
+	<title>
+		<band splitType="Stretch"/>
+	</title>
+	<pageHeader>
+		<band splitType="Stretch"/>
+	</pageHeader>
+	<columnHeader>
+		<band splitType="Stretch"/>
+	</columnHeader>
+	<detail>
+		<band height="38" splitType="Stretch">
+			<textField pattern="">
+				<reportElement x="0" y="30" width="45" height="6" uuid="f8de9df4-8ee8-48f9-8d19-b8f20f8e1bf0"/>
+				<box rightPadding="3"/>
+				<textElement textAlignment="Right" verticalAlignment="Bottom" rotation="None">
+					<font size="5" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{kode}]]></textFieldExpression>
+			</textField>
+			<componentElement>
+				<reportElement x="11" y="9" width="69" height="21" uuid="3308b527-3d0b-49a5-83f5-ea8430579365"/>
+				<jr:barbecue xmlns:jr="http://jasperreports.sourceforge.net/jasperreports/components" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports/components http://jasperreports.sourceforge.net/xsd/components.xsd" type="Code128" drawText="false" checksumRequired="false" barWidth="2" barHeight="90" rotation="None">
+					<jr:codeExpression><![CDATA[$F{kode}]]></jr:codeExpression>
+				</jr:barbecue>
+			</componentElement>
+			<textField pattern="">
+				<reportElement x="45" y="30" width="45" height="8" uuid="e5ba594d-7154-499d-b7d7-dd0d22c28b87"/>
+				<textElement textAlignment="Center" verticalAlignment="Top" markup="styled">
+					<font size="5" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA["Rp." + new DecimalFormat( "#,##0").format($F{harga})]]></textFieldExpression>
+			</textField>
+			<textField pattern="">
+				<reportElement x="0" y="1" width="90" height="8" uuid="c852609a-cf0e-4ee0-a762-3466c47541d7"/>
+				<textElement textAlignment="Center" verticalAlignment="Middle" markup="styled">
+					<font size="5" isBold="false"/>
+				</textElement>
+				<textFieldExpression><![CDATA[$F{nama_barang}]]></textFieldExpression>
+			</textField>
+		</band>
+	</detail>
+	<columnFooter>
+		<band splitType="Stretch"/>
+	</columnFooter>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
