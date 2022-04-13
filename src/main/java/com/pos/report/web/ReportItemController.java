@@ -83,20 +83,22 @@ public class ReportItemController {
         reportService.generateReport("ItemListByKategori", format, parameters, response, "item-by-kategori");
     }
 
-    @RequestMapping(value = "percobaan*", method = RequestMethod.GET)
-    public void Percobaan(HttpServletRequest request, HttpServletResponse response) {
+    @RequestMapping(value = "report-kepegawaian*", method = RequestMethod.GET)
+    public void Kepegawaian(HttpServletRequest request, HttpServletResponse response) {
         String uri = request.getRequestURI();
         String format = uri.substring(uri.lastIndexOf(".") + 1);
         String imgPath = context.getRealPath("/img") + System.getProperty("file.separator");
-        System.out.println("uri : " + uri + ", context : " + context.getRealPath("/templates/jrxml/"));
-//        String id = request.getParameter("id");
-//        String nama = request.getParameter("nama");
+        System.out.println("uri : " + uri + ", context : " + context.getRealPath("/templates/jrxml/simpeg/"));
+        String kode_instansi = request.getParameter("kode_instansi");
+        String kode_unor = request.getParameter("kode_unor");
+        String kode_status = request.getParameter("kode_status");
 
         Map<String, Object> parameters = new HashMap<>();
         parameters.put("imgPath", imgPath);
-//        parameters.put("idKategori", id);
-//        parameters.put("namaKategori", nama == null || nama.equalsIgnoreCase("")? "Semua": nama);
+        parameters.put("kode_instansi", kode_instansi);
+        parameters.put("kode_unor", kode_unor);
+        parameters.put("kode_status", kode_status);
 
-        reportService.generateReport("coba", "pdf", parameters, response, "percobaan");
+        reportService.generateReport("rep-kepegawaian", "pdf", parameters, response, "kepegawaian");
     }
 }

@@ -31,4 +31,4 @@ logging:
     org.hibernate: debug
 # Server configuration
 server:
-  port: 8080 #set your port
+  port: 7111 #set your port
