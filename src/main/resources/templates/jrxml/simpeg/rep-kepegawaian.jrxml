@@ -1,0 +1,475 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!-- Created with Jaspersoft Studio version 6.6.0.final using JasperReports Library version 6.6.0  -->
+<jasperReport xmlns="http://jasperreports.sourceforge.net/jasperreports" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xsi:schemaLocation="http://jasperreports.sourceforge.net/jasperreports http://jasperreports.sourceforge.net/xsd/jasperreport.xsd" name="kepegawaian" pageWidth="1188" pageHeight="742" orientation="Landscape" columnWidth="1148" leftMargin="20" rightMargin="20" topMargin="20" bottomMargin="20" uuid="1d233dbb-ea94-4789-a211-c904b02f9c6c">
+	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="templates/jrxml/simpeg75.xml"/>
+	<property name="com.jaspersoft.studio.unit." value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.pageWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.topMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.bottomMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.leftMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.rightMargin" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
+	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
+	<parameter name="kode_unor" class="java.lang.String"/>
+	<parameter name="bulan" class="java.lang.String">
+		<defaultValueExpression><![CDATA["OKTOBER 2014"]]></defaultValueExpression>
+	</parameter>
+	<parameter name="qrcode" class="java.lang.String"/>
+	<parameter name="imgPath" class="java.lang.String"/>
+	<parameter name="kode_instansi" class="java.lang.String"/>
+	<parameter name="kode_status" class="java.lang.String"/>
+	<queryString>
+		<![CDATA[
+select * from fn_rpt_kepegawaian($P{kode_instansi}, $P{kode_unor}, $P{kode_status}) as (
+id varchar, nip varchar, nama varchar, alamat varchar, tempat_lahir varchar, tgl_lahir text, instansi varchar, unor varchar, eselon varchar, 
+golongan varchar, kelas_jabatan varchar, status_pegawai varchar, jabatan varchar, agama varchar, pendidikan varchar, kode_jenis_kelamin varchar)]]>
+	</queryString>
+	<field name="id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+	</field>
+	<field name="nip" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nip"/>
+	</field>
+	<field name="nama" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nama"/>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="alamat"/>
+	</field>
+	<field name="tempat_lahir" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tempat_lahir"/>
+	</field>
+	<field name="tgl_lahir" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tgl_lahir"/>
+	</field>
+	<field name="instansi" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="instansi"/>
+	</field>
+	<field name="unor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="unor"/>
+	</field>
+	<field name="eselon" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="eselon"/>
+	</field>
+	<field name="golongan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="golongan"/>
+	</field>
+	<field name="kelas_jabatan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="kelas_jabatan"/>
+	</field>
+	<field name="status_pegawai" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="status_pegawai"/>
+	</field>
+	<field name="jabatan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="jabatan"/>
+	</field>
+	<field name="agama" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="agama"/>
+	</field>
+	<field name="pendidikan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="pendidikan"/>
+	</field>
+	<field name="kode_jenis_kelamin" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="kode_jenis_kelamin"/>
+	</field>
+	<variable name="nomor" class="java.lang.Integer" calculation="Count">
+		<variableExpression><![CDATA[$F{id}]]></variableExpression>
+	</variable>
+	<background>
+		<band height="553" splitType="Stretch"/>
+	</background>
+	<title>
+		<band height="144" splitType="Stretch">
+			<frame>
+				<reportElement x="130" y="0" width="1006" height="130" uuid="5d24240c-b352-4e18-8dea-a448a007784e"/>
+				<staticText>
+					<reportElement x="40" y="0" width="790" height="79" uuid="f201c20b-74ea-42e3-85ff-c9e2652404cb"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="22" isBold="true"/>
+					</textElement>
+					<text><![CDATA[PEMERINTAH KABUPATEN MALANG
+DATA KEPEGAWAIAN]]></text>
+				</staticText>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="40" y="80" width="790" height="23" uuid="56252464-611d-4205-9292-e9259317d7d3"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="15"/>
+					</textElement>
+					<textFieldExpression><![CDATA["OPD  : " + $F{instansi}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true">
+					<reportElement x="40" y="103" width="790" height="23" uuid="36ff949b-447e-4cb1-90c7-bcf654dca8ba"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="15"/>
+					</textElement>
+					<textFieldExpression><![CDATA["UNIT ORGANISASI KERJA  : " + $F{unor}]]></textFieldExpression>
+				</textField>
+			</frame>
+			<image scaleImage="FillFrame" onErrorType="Blank">
+				<reportElement x="1" y="0" width="127" height="129" uuid="b84cae6c-498e-4368-8416-80d49f6e2d2f">
+					<property name="local_mesure_unitheight" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.height" value="px"/>
+					<property name="local_mesure_unitwidth" value="pixel"/>
+					<property name="com.jaspersoft.studio.unit.width" value="px"/>
+				</reportElement>
+				<imageExpression><![CDATA[$P{imgPath}+"logo.png"]]></imageExpression>
+			</image>
+		</band>
+	</title>
+	<columnHeader>
+		<band height="50" splitType="Stretch">
+			<frame>
+				<reportElement x="1" y="0" width="1149" height="50" uuid="7c16edfe-8102-4dc5-b042-d95e04aeb7c2"/>
+				<staticText>
+					<reportElement mode="Opaque" x="0" y="0" width="20" height="50" backcolor="#D9D9D9" uuid="6b28014e-391f-490b-bb0f-43d27e4d8082"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NO]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="20" y="0" width="69" height="50" backcolor="#D9D9D9" uuid="6113b851-b454-47b3-ad10-96fe15e48bed"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NIP]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="89" y="0" width="111" height="50" backcolor="#D9D9D9" uuid="43e4933f-17c3-489e-80e8-dd27142259e1"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[NAMA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="200" y="0" width="120" height="50" backcolor="#D9D9D9" uuid="eb63d23c-49bd-473f-93c6-5b4f721c5f1c"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ALAMAT]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="320" y="0" width="70" height="50" backcolor="#D9D9D9" uuid="336d667b-e964-4ef6-b72b-b27cbdf84ec0"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TEMPAT LAHIR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="390" y="0" width="70" height="50" backcolor="#D9D9D9" uuid="fc539207-d4cc-40d7-943b-89aac21718cf"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[TANGGAL LAHIR]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="460" y="0" width="30" height="50" backcolor="#D9D9D9" uuid="0ecd7437-e125-494b-83c9-49f83bbd386d"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[KEL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="490" y="0" width="70" height="50" backcolor="#D9D9D9" uuid="bb7fa64e-182a-4289-ac8a-d30a545625e3"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[AGAMA]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="560" y="0" width="70" height="50" backcolor="#D9D9D9" uuid="50d02142-5824-48a3-af18-b1002ab8fc4c"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[JABATAN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="630" y="0" width="50" height="50" backcolor="#D9D9D9" uuid="b337a5e4-e36c-4cfe-bd21-7462f910f811"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[ESELON]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="680" y="0" width="50" height="50" backcolor="#D9D9D9" uuid="775ad85d-16ee-4538-946f-ab048853eda4"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[GOL]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="730" y="0" width="50" height="50" backcolor="#D9D9D9" uuid="1e33a78f-36fa-4211-8753-923238e6ddbc"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[KELAS JABATAN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="780" y="0" width="70" height="50" backcolor="#D9D9D9" uuid="b37f6d51-c768-41c4-89bd-ab4a19edffb0"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[PENDIDIKAN]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="850" y="0" width="70" height="50" backcolor="#D9D9D9" uuid="d05ffe65-5f94-4307-a15d-91998bf0796a"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[STATUS]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="920" y="0" width="110" height="50" backcolor="#D9D9D9" uuid="e569f3fd-fd18-435b-88c1-9723d914c16e"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[OPD]]></text>
+				</staticText>
+				<staticText>
+					<reportElement mode="Opaque" x="1030" y="0" width="110" height="50" backcolor="#D9D9D9" uuid="26a09c67-cad3-420d-9506-260e4b485ee5"/>
+					<box>
+						<pen lineWidth="0.75" lineStyle="Solid"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9" isBold="true"/>
+					</textElement>
+					<text><![CDATA[UNIT KERJA]]></text>
+				</staticText>
+			</frame>
+		</band>
+	</columnHeader>
+	<detail>
+		<band height="32" splitType="Stretch">
+			<frame>
+				<reportElement x="1" y="0" width="1149" height="32" uuid="e0f03157-0a94-40af-9e7a-3da55d20fd2d"/>
+				<textField isStretchWithOverflow="true" pattern="#,##0" isBlankWhenNull="true">
+					<reportElement x="0" y="0" width="20" height="32" uuid="d1b52ac3-12b4-4c72-a139-45f693e62d4b"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$V{nomor}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="20" y="0" width="69" height="32" isPrintWhenDetailOverflows="true" uuid="947c239f-a045-42f9-bc20-fec783fba463"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="5"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nip}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="89" y="0" width="111" height="32" uuid="717c09ff-6065-41bc-a136-e088d7b0aeb7"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nama}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="320" y="0" width="70" height="32" uuid="0c5c4394-8676-4e54-a787-c7abcda57340"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tempat_lahir}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="200" y="0" width="120" height="32" uuid="a0ae5e5a-f620-4f0f-bc5b-4a8bcb247d0f"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="DD/MM/YYYY" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="390" y="0" width="70" height="32" uuid="6fb97f3a-01e8-4271-9cbc-782c92e92330"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tgl_lahir}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="460" y="0" width="30" height="32" uuid="408a16c4-e874-487b-a7e4-d2710ab2db43"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="7"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{kode_jenis_kelamin}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="DD/MM/YYYY" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="490" y="0" width="70" height="32" uuid="b39f9148-34c1-42e5-afe5-2214870b10fd"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{agama}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="DD/MM/YYYY" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="560" y="0" width="70" height="32" uuid="42d6095b-e46f-4a63-bb7d-6652ea532183"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{jabatan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="DD/MM/YYYY" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="630" y="0" width="50" height="32" uuid="ab22b524-b169-464f-9e1a-503a404cae06"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{eselon}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="680" y="0" width="50" height="32" uuid="db50c704-744b-4921-865c-d5ea02617730"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{golongan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="730" y="0" width="50" height="32" uuid="3ab48f85-147c-493f-937c-60c1b1914e72"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{kelas_jabatan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="780" y="0" width="70" height="32" uuid="b4f7553f-0802-4d1c-973c-a74c30b0273a"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pendidikan}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="850" y="0" width="70" height="32" uuid="c9c48185-5f25-4fed-95cb-25cf9fc54613"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{status_pegawai}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="920" y="0" width="110" height="32" uuid="2caab040-e004-4116-aee1-2666858139b8"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{instansi}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement stretchType="RelativeToBandHeight" x="1030" y="0" width="110" height="32" uuid="57021f7e-31e6-4e48-9bc4-87377e359a49"/>
+					<box>
+						<pen lineWidth="0.75"/>
+					</box>
+					<textElement textAlignment="Left" verticalAlignment="Middle">
+						<font size="7"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{unor}]]></textFieldExpression>
+				</textField>
+			</frame>
+		</band>
+	</detail>
+	<pageFooter>
+		<band splitType="Stretch"/>
+	</pageFooter>
+	<summary>
+		<band splitType="Stretch"/>
+	</summary>
+</jasperReport>
