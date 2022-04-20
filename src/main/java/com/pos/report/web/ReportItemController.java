@@ -101,4 +101,34 @@ public class ReportItemController {
 
         reportService.generateReport("rep-kepegawaian", "pdf", parameters, response, "kepegawaian");
     }
+    
+    @RequestMapping(value = "report-permohonan-ijin*", method = RequestMethod.GET)
+    public void PermohonanIjin(HttpServletRequest request, HttpServletResponse response) {
+        String uri = request.getRequestURI();
+        String format = uri.substring(uri.lastIndexOf(".") + 1);
+        String imgPath = context.getRealPath("/img") + System.getProperty("file.separator");
+        System.out.println("uri : " + uri + ", context : " + context.getRealPath("/templates/jrxml/simpeg/"));
+        String id_ijin = request.getParameter("id_ijin");
+
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("imgPath", imgPath);
+        parameters.put("id_ijin", id_ijin);
+
+        reportService.generateReport("pengajuan-cuti", "pdf", parameters, response, "pengajuan-cuti");
+    }
+    
+    @RequestMapping(value = "report-pemberian-ijin*", method = RequestMethod.GET)
+    public void PemberianIjin(HttpServletRequest request, HttpServletResponse response) {
+        String uri = request.getRequestURI();
+        String format = uri.substring(uri.lastIndexOf(".") + 1);
+        String imgPath = context.getRealPath("/img") + System.getProperty("file.separator");
+        System.out.println("uri : " + uri + ", context : " + context.getRealPath("/templates/jrxml/simpeg/"));
+        String id_ijin = request.getParameter("id_ijin");
+
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("imgPath", imgPath);
+        parameters.put("id_ijin", id_ijin);
+
+        reportService.generateReport("permintaan-pemberian-cuti", "pdf", parameters, response, "pemberian-cuti");
+    }
 }
