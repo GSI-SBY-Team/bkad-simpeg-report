@@ -60,7 +60,7 @@ public class ReportService {
         }
         System.out.println("dataSource");
         System.out.println(dataSource);
-        String reportResource = "classpath:templates/jrxml/" + report + ".jrxml";
+        String reportResource = "classpath:templates/jrxml/simpeg/" + report + ".jrxml";
         System.out.println("context.getRealPath" + appContext.getResource("/").toString());
         System.out.println("reportResource: " + reportResource);
 
@@ -207,7 +207,7 @@ public class ReportService {
 
     public void generateReport(String jasperFile, String format, Map<String, Object> parameters,
                                HttpServletResponse response, String outputName) {
-        String reportResource = "classpath:templates/jrxml/" + jasperFile + ".jasper";
+        String reportResource = "classpath:templates/jrxml/simpeg/" + jasperFile + ".jasper";
         JasperReport jasperReport;
         try (InputStream jasperStream = resourceLoader.getResource(reportResource).getInputStream();
                 Connection con=dataSource.getConnection()) {
@@ -249,7 +249,7 @@ public class ReportService {
     public File exportPdfReport(String jasperFile, String out, Map<String, Object> parameters) throws IOException {
         File pdf = null;
 
-        String reportResource = "classpath:templates/jrxml/" + jasperFile + ".jasper";
+        String reportResource = "classpath:templates/jrxml/simpeg/" + jasperFile + ".jasper";
         JasperReport jasperReport;
         try (InputStream jasperStream = resourceLoader.getResource(reportResource).getInputStream();
              Connection con=dataSource.getConnection()) {

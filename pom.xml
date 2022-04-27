@@ -12,6 +12,7 @@
 	<artifactId>simpeg-bkad-report</artifactId>
 	<version>0.0.1-SNAPSHOT</version>
 	<name>simpeg-bkad-report</name>
+        <packaging>war</packaging>
 	<description>Module reporting for simpeg bkad</description>
 	<properties>
 		<java.version>1.8</java.version>
@@ -51,7 +52,7 @@
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>
 			<artifactId>jasperreports</artifactId>
-			<version>6.0.0</version>
+			<version>6.19.1</version>
 		</dependency>
 		<dependency>
 			<groupId>net.sf.jasperreports</groupId>

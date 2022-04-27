@@ -4,7 +4,7 @@
 	<property name="ireport.zoom" value="1.0"/>
 	<property name="ireport.x" value="0"/>
 	<property name="ireport.y" value="0"/>
-	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="One Empty Record"/>
+	<property name="com.jaspersoft.studio.data.defaultdataadapter" value="templates/jrxml/simpeg75.xml"/>
 	<property name="com.jaspersoft.studio.data.sql.tables" value=""/>
 	<property name="com.jaspersoft.studio.unit." value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.pageHeight" value="pixel"/>
@@ -16,11 +16,115 @@
 	<property name="com.jaspersoft.studio.unit.columnWidth" value="pixel"/>
 	<property name="com.jaspersoft.studio.unit.columnSpacing" value="pixel"/>
 	<parameter name="imgPath" class="java.lang.String"/>
+	<parameter name="id_ijin" class="java.lang.String" nestedType="java.lang.Integer"/>
 	<queryString language="SQL">
-		<![CDATA[select nama from m_pegawai limit 1]]>
+		<![CDATA[select * from fn_rpt_permintaan_pemberian_cuti($P{id_ijin}) as (
+id varchar, no_surat varchar, tgl_mulai text, tgl_selesai text, keterangan text, masa_hari text, jenis_ijin varchar, cuti_tahunan text, cuti_sakit text,
+cuti_alasan_penting text, cuti_besar text, cuti_melahirkan text, cltn text, disetujui text, ditolak text, perubahan text, ditangguhkan text,
+nip varchar, pegawai varchar, eselon varchar, golongan text, jabatan varchar, alamat varchar, no_hp varchar, instansi text, kode_unor varchar,
+unor varchar, tahun text, nama_bidang varchar, nip_bidang varchar, pangkat_bidang text, nama_kepala varchar, nip_kepala varchar, pangkat_kepala text)]]>
 	</queryString>
-	<field name="nama" class="java.lang.String">
-		<property name="com.jaspersoft.studio.field.label" value="nama"/>
+	<field name="id" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="id"/>
+	</field>
+	<field name="no_surat" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="no_surat"/>
+	</field>
+	<field name="tgl_mulai" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tgl_mulai"/>
+	</field>
+	<field name="tgl_selesai" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tgl_selesai"/>
+	</field>
+	<field name="keterangan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="keterangan"/>
+	</field>
+	<field name="masa_hari" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="masa_hari"/>
+	</field>
+	<field name="jenis_ijin" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="jenis_ijin"/>
+	</field>
+	<field name="cuti_tahunan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cuti_tahunan"/>
+	</field>
+	<field name="cuti_sakit" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cuti_sakit"/>
+	</field>
+	<field name="cuti_alasan_penting" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cuti_alasan_penting"/>
+	</field>
+	<field name="cuti_besar" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cuti_besar"/>
+	</field>
+	<field name="cuti_melahirkan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cuti_melahirkan"/>
+	</field>
+	<field name="cltn" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="cltn"/>
+	</field>
+	<field name="disetujui" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="disetujui"/>
+	</field>
+	<field name="ditolak" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ditolak"/>
+	</field>
+	<field name="perubahan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="perubahan"/>
+	</field>
+	<field name="ditangguhkan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="ditangguhkan"/>
+	</field>
+	<field name="nip" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nip"/>
+	</field>
+	<field name="pegawai" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="pegawai"/>
+	</field>
+	<field name="eselon" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="eselon"/>
+	</field>
+	<field name="golongan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="golongan"/>
+	</field>
+	<field name="jabatan" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="jabatan"/>
+	</field>
+	<field name="alamat" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="alamat"/>
+	</field>
+	<field name="no_hp" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="no_hp"/>
+	</field>
+	<field name="instansi" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="instansi"/>
+	</field>
+	<field name="kode_unor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="kode_unor"/>
+	</field>
+	<field name="unor" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="unor"/>
+	</field>
+	<field name="tahun" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="tahun"/>
+	</field>
+	<field name="nama_bidang" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nama_bidang"/>
+	</field>
+	<field name="nip_bidang" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nip_bidang"/>
+	</field>
+	<field name="pangkat_bidang" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="pangkat_bidang"/>
+	</field>
+	<field name="nama_kepala" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nama_kepala"/>
+	</field>
+	<field name="nip_kepala" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="nip_kepala"/>
+	</field>
+	<field name="pangkat_kepala" class="java.lang.String">
+		<property name="com.jaspersoft.studio.field.label" value="pangkat_kepala"/>
 	</field>
 	<background>
 		<band splitType="Stretch"/>
@@ -31,7 +135,7 @@
 				<reportElement x="0" y="0" width="580" height="166" uuid="f361c533-80aa-4437-9761-3abc87435413"/>
 				<staticText>
 					<reportElement x="311" y="0" width="258" height="55" uuid="86b955e1-ff30-4e6c-86b9-cff9795ab1af"/>
-					<textElement textAlignment="Justified" verticalAlignment="Top">
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
 						<font size="9" isBold="false"/>
 					</textElement>
 					<text><![CDATA[PERATURAN BADAN KEPEGAWAIAN NEGARA
@@ -40,29 +144,29 @@ NOMOR 24 TAHUN 2017
 TENTANG
 TATA CARA PEMBERIAN CUTI PEGAWAI NEGERI SIPIL]]></text>
 				</staticText>
-				<textField isStretchWithOverflow="true">
-					<reportElement x="311" y="55" width="258" height="14" uuid="55a25e8a-bc7e-4510-b791-326b547f9991"/>
+				<textField isStretchWithOverflow="true" pattern="dd MMMM yyyy" isBlankWhenNull="true">
+					<reportElement x="231" y="55" width="49" height="14" uuid="55a25e8a-bc7e-4510-b791-326b547f9991"/>
 					<textElement textAlignment="Justified" verticalAlignment="Middle">
 						<font size="9"/>
 					</textElement>
-					<textFieldExpression><![CDATA["Malang, " + new java.util.Date()]]></textFieldExpression>
+					<textFieldExpression><![CDATA["Malang, "]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="311" y="69" width="258" height="14" uuid="763a1385-3c43-49d0-ba9f-c12cfb09d053"/>
+					<reportElement x="231" y="69" width="338" height="14" uuid="763a1385-3c43-49d0-ba9f-c12cfb09d053"/>
 					<textElement textAlignment="Justified" verticalAlignment="Top">
 						<font size="9" isBold="false"/>
 					</textElement>
 					<text><![CDATA[Kepada]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="true">
-					<reportElement x="311" y="83" width="258" height="14" uuid="6f82ff49-083a-4810-85d1-2048c11dc5b7"/>
+					<reportElement x="231" y="83" width="338" height="14" uuid="6f82ff49-083a-4810-85d1-2048c11dc5b7"/>
 					<textElement textAlignment="Justified" verticalAlignment="Middle">
 						<font size="9"/>
 					</textElement>
-					<textFieldExpression><![CDATA["Yth. Kepala " + new java.util.Date()]]></textFieldExpression>
+					<textFieldExpression><![CDATA["Yth.  "+$F{instansi}]]></textFieldExpression>
 				</textField>
 				<staticText>
-					<reportElement x="311" y="97" width="258" height="23" uuid="f4d602be-f6b9-4b3d-9373-beafa66d2c15"/>
+					<reportElement x="231" y="97" width="338" height="23" uuid="f4d602be-f6b9-4b3d-9373-beafa66d2c15"/>
 					<textElement textAlignment="Justified" verticalAlignment="Top">
 						<font size="9" isBold="false"/>
 					</textElement>
@@ -76,12 +180,19 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[FORMULIR PERMINTAAN DAN PEMBERIAN CUTI]]></text>
 				</staticText>
-				<textField isStretchWithOverflow="true">
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="1" y="151" width="569" height="16" uuid="88059d8a-342c-424f-b22e-c92ee68161a3"/>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="9"/>
 					</textElement>
-					<textFieldExpression><![CDATA[""]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{no_surat}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" pattern="dd MMMM yyyy" isBlankWhenNull="true">
+					<reportElement x="280" y="55" width="289" height="14" uuid="055357e9-fa07-4f1d-ae6a-79c52280f9f4"/>
+					<textElement textAlignment="Justified" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[new java.util.Date()]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
@@ -146,7 +257,7 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[Unit Kerja]]></text>
 				</staticText>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="70" y="11" width="220" height="18" uuid="e4c8957f-53d8-406c-b163-e2ab185df54a"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -154,9 +265,13 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement verticalAlignment="Middle">
+						<font size="9"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pegawai}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="70" y="29" width="220" height="18" uuid="d0b9a14b-f784-4c21-9030-fc2de9a669c5"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -164,9 +279,13 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement verticalAlignment="Middle">
+						<font size="9"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{jabatan}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="70" y="47" width="510" height="18" uuid="d261cab6-5ef4-4274-8606-854e74d9d277"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -174,9 +293,13 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement verticalAlignment="Middle">
+						<font size="9"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{unor}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="360" y="29" width="220" height="18" uuid="2b3220d4-fd37-470a-90bc-0c60e42b5a5f"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -184,9 +307,13 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement verticalAlignment="Middle">
+						<font size="9"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="360" y="11" width="220" height="18" uuid="40a67595-61bf-43f6-9791-a5c47aa5efce"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -194,7 +321,11 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement verticalAlignment="Middle">
+						<font size="9"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nip}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="290" y="11" width="70" height="18" uuid="2ff69230-a0b7-4dc0-8d32-f7826c7354f6"/>
@@ -283,7 +414,7 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[5. Cuti Karena Alasan Penting]]></text>
 				</staticText>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="150" y="11" width="140" height="18" uuid="b047ce02-8934-4c65-b78f-5314962285e7"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -291,9 +422,12 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cuti_tahunan}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="150" y="29" width="140" height="18" uuid="64aa4df9-086a-4a22-a7fe-9d0c621b0d6d"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -301,9 +435,12 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="10"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cuti_sakit}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="150" y="47" width="140" height="18" uuid="0fb8a53a-6b63-4b69-9b22-65003d07fb42"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -311,9 +448,12 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cuti_alasan_penting}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="470" y="29" width="110" height="18" uuid="66bbdca8-2ac3-4538-a5e5-82f33694368d"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -321,9 +461,12 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cuti_melahirkan}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="470" y="11" width="110" height="18" uuid="ccfc74f4-1d98-463e-a4d9-a7ba22cb661e"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -331,7 +474,10 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cuti_besar}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="290" y="11" width="180" height="18" uuid="a138d24b-d3fc-402a-9529-4f17e3780701"/>
@@ -373,9 +519,9 @@ Malang]]></text>
 						<font size="9" isBold="false"/>
 						<paragraph leftIndent="8"/>
 					</textElement>
-					<text><![CDATA[4. Cuti di Luar Tanggungan Negara]]></text>
+					<text><![CDATA[6. Cuti di Luar Tanggungan Negara]]></text>
 				</staticText>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="470" y="47" width="110" height="18" uuid="2260a3ac-5cb1-494b-9e90-675bf8a75102"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -383,7 +529,10 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{cltn}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
@@ -402,7 +551,7 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[III. ALASAN CUTI]]></text>
 				</staticText>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="0" y="11" width="580" height="18" uuid="2405cda0-859e-48fe-a450-259b55f72db5"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -410,7 +559,10 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement verticalAlignment="Middle">
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{keterangan}]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
@@ -443,7 +595,7 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[Selama]]></text>
 				</staticText>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="150" y="11" width="140" height="20" uuid="03c51d57-c883-4601-b250-61b271ea25d9"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -451,9 +603,13 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{masa_hari}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="410" y="11" width="170" height="20" uuid="be7883fb-f746-4430-b4b0-2984b8dce8d3"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -461,7 +617,11 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{tgl_mulai}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="290" y="11" width="120" height="20" uuid="7151048e-8650-4a5f-8eab-47b4c761bb0b"/>
@@ -512,7 +672,7 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[1. CUTI TAHUNAN]]></text>
 				</staticText>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="480" y="11" width="100" height="18" uuid="235cd3e3-f599-455f-8f84-e614c7db20d5"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -520,7 +680,8 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="290" y="11" width="190" height="18" uuid="c60a2423-9aa4-446a-b14e-41d504dcf85e"/>
@@ -578,7 +739,7 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[Keterangan]]></text>
 				</staticText>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="90" y="47" width="100" height="18" uuid="826081b9-80c5-4173-805f-b8b015968f97"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -586,9 +747,10 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="90" y="65" width="100" height="18" uuid="54a65e74-2dbc-4827-b68b-bd3454794ee2"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -596,9 +758,10 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="90" y="83" width="100" height="18" uuid="68da80d5-6ec4-4b02-9092-d2244c24f406"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -606,9 +769,10 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="190" y="83" width="100" height="18" uuid="99f16404-6b59-453b-a0fa-b0c2087ffb3b"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -616,9 +780,10 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="190" y="47" width="100" height="18" uuid="3423852d-93b7-4b97-bcd8-b5403eb04ab9"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -626,9 +791,10 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="190" y="65" width="100" height="18" uuid="5a678ddf-614e-44c5-9102-3be46e20590d"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -636,7 +802,8 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="0" y="47" width="90" height="18" uuid="866b0916-1db6-4fb5-9248-73d4355ef3c2"/>
@@ -736,7 +903,7 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[6. CUTI DI LUAR TANGGUNGAN NEGARA]]></text>
 				</staticText>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="480" y="29" width="100" height="18" uuid="902ef739-2c09-444c-96e6-4903ed94d348"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -744,9 +911,10 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="480" y="47" width="100" height="18" uuid="4857d79c-68ba-4460-8581-6ba12cbd0978"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -754,9 +922,10 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="480" y="65" width="100" height="18" uuid="c6a6f39c-71d6-45b8-aa56-abd8ba41b696"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -764,9 +933,10 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="480" y="83" width="100" height="18" uuid="b1bce926-5c5c-4424-b721-59bd62d58ccf"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -774,7 +944,8 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textFieldExpression><![CDATA[""]]></textFieldExpression>
 				</textField>
 			</frame>
 			<frame>
@@ -797,21 +968,7 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[VI. ALAMAT SELAMA MENJALANKAN CUTI]]></text>
 				</staticText>
-				<staticText>
-					<reportElement x="0" y="11" width="290" height="18" uuid="e79fa4ae-aecd-44bf-93cf-044c2ac2097e"/>
-					<box>
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Left" verticalAlignment="Middle">
-						<font size="9" isBold="false"/>
-						<paragraph leftIndent="8"/>
-					</textElement>
-					<text><![CDATA[]]></text>
-				</staticText>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="400" y="11" width="180" height="18" uuid="6fa903fa-17df-4f5d-a995-546885a8214c"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -819,7 +976,11 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement verticalAlignment="Middle">
+						<font size="9"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{no_hp}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="290" y="11" width="110" height="18" uuid="7d42d7e3-8c2e-458e-94ff-7fb626dfcdee"/>
@@ -863,27 +1024,31 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[Hormat Saya]]></text>
 				</staticText>
-				<textField>
-					<reportElement x="360" y="72" width="140" height="13" uuid="1e0aa062-0196-46dd-a6dd-a0c77275361b"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="290" y="72" width="290" height="13" uuid="1e0aa062-0196-46dd-a6dd-a0c77275361b"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font size="9" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pegawai}]]></textFieldExpression>
 				</textField>
-				<textField>
-					<reportElement x="360" y="85" width="140" height="13" uuid="f805f9d5-75c4-4c58-a63d-66279c3e5549"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="290" y="85" width="290" height="13" uuid="f805f9d5-75c4-4c58-a63d-66279c3e5549"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nip}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="290" y="47" width="290" height="25" uuid="3e60b6a8-2e78-49e6-ad93-9205e9e704aa"/>
@@ -899,6 +1064,20 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[]]></text>
 				</staticText>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="0" y="11" width="290" height="18" uuid="78f0b0dc-f1c2-491c-b712-25a1c0cb2b85"/>
+					<box>
+						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement verticalAlignment="Middle">
+						<font size="9"/>
+						<paragraph leftIndent="3"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{alamat}]]></textFieldExpression>
+				</textField>
 			</frame>
 			<frame>
 				<reportElement x="0" y="226" width="580" height="128" uuid="6ac9e6d8-52d5-4b38-a964-29ee232c81b7"/>
@@ -976,27 +1155,31 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[KEPALA BIDANG]]></text>
 				</staticText>
-				<textField>
-					<reportElement x="360" y="89" width="140" height="13" uuid="b9721066-9be6-4d93-a386-a746d0226496"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="290" y="89" width="290" height="13" uuid="b9721066-9be6-4d93-a386-a746d0226496"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font size="9" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nama_bidang}]]></textFieldExpression>
 				</textField>
-				<textField>
-					<reportElement x="360" y="102" width="140" height="13" uuid="a9cf904b-44ba-4970-9440-7566a65ee08f"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="290" y="102" width="290" height="13" uuid="a9cf904b-44ba-4970-9440-7566a65ee08f"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{pangkat_bidang}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="290" y="64" width="290" height="25" uuid="64c3924b-c82d-4851-a8fd-7a17bc4a2402"/>
@@ -1040,18 +1223,20 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[TIDAK DISETUJUI]]></text>
 				</staticText>
-				<textField>
-					<reportElement x="360" y="115" width="140" height="13" uuid="fe45b783-5c13-4508-a193-dd8cfcca300e"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="290" y="115" width="290" height="13" uuid="fe45b783-5c13-4508-a193-dd8cfcca300e"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nip_bidang}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="0" y="28" width="150" height="18" uuid="8318f3b4-51db-48f6-94f1-d8f768bcb1f5"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1060,9 +1245,9 @@ Malang]]></text>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{disetujui}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="150" y="28" width="140" height="18" uuid="ee596698-3eff-44a6-81f4-9da42a7f1e4f"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1071,9 +1256,9 @@ Malang]]></text>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{perubahan}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="290" y="28" width="140" height="18" uuid="4bc126f6-2b57-4c0f-a891-979971849fcd"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1082,9 +1267,9 @@ Malang]]></text>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{ditangguhkan}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="430" y="28" width="150" height="18" uuid="78c7ede8-c36c-4367-8036-9aca7c1b8322"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1093,7 +1278,7 @@ Malang]]></text>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{ditolak}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
@@ -1162,41 +1347,31 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[]]></text>
 				</staticText>
-				<staticText>
-					<reportElement x="290" y="45" width="290" height="18" uuid="046620ad-6bd2-4ad9-993d-062e0e758cf4"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="290" y="88" width="290" height="18" uuid="a8014806-36e7-4ac6-8ffb-139048655302"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Bottom">
+						<font size="9" isUnderline="true"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nama_kepala}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="290" y="106" width="290" height="13" uuid="25078338-155e-44d3-942e-0929b5554e7c"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font size="9" isBold="false"/>
-						<paragraph leftIndent="8"/>
+						<font size="9"/>
 					</textElement>
-					<text><![CDATA[KEPALA]]></text>
-				</staticText>
-				<textField>
-					<reportElement x="360" y="88" width="140" height="18" uuid="a8014806-36e7-4ac6-8ffb-139048655302"/>
-					<box>
-						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
-				</textField>
-				<textField>
-					<reportElement x="360" y="106" width="140" height="13" uuid="25078338-155e-44d3-942e-0929b5554e7c"/>
-					<box>
-						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
-					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{pangkat_kepala}]]></textFieldExpression>
 				</textField>
 				<staticText>
 					<reportElement x="290" y="63" width="290" height="25" uuid="a73716b7-c568-435e-8228-befb179a1bc3"/>
@@ -1240,18 +1415,20 @@ Malang]]></text>
 					</textElement>
 					<text><![CDATA[TIDAK DISETUJUI]]></text>
 				</staticText>
-				<textField>
-					<reportElement x="360" y="119" width="140" height="13" uuid="82ef7a02-4600-4385-8210-cc6f74f6125e"/>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="290" y="119" width="290" height="13" uuid="82ef7a02-4600-4385-8210-cc6f74f6125e"/>
 					<box>
 						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{nip_kepala}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="0" y="27" width="150" height="18" uuid="f3ac1c2f-340c-44ea-8049-8c8a22db8a35"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1260,9 +1437,9 @@ Malang]]></text>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{disetujui}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="150" y="27" width="140" height="18" uuid="f6f3e37b-1c56-442c-a494-7de161929f7a"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1271,9 +1448,9 @@ Malang]]></text>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{perubahan}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="290" y="27" width="140" height="18" uuid="ce9ca1e8-d392-4c47-8201-1d056f162970"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1282,9 +1459,9 @@ Malang]]></text>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{ditangguhkan}]]></textFieldExpression>
 				</textField>
-				<textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="430" y="27" width="150" height="18" uuid="15ad6714-c74c-48c9-9e63-523f826c76f1"/>
 					<box>
 						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
@@ -1293,7 +1470,20 @@ Malang]]></text>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle"/>
-					<textFieldExpression><![CDATA["Text Field"]]></textFieldExpression>
+					<textFieldExpression><![CDATA[$F{ditolak}]]></textFieldExpression>
+				</textField>
+				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
+					<reportElement x="290" y="45" width="290" height="18" uuid="28ce4192-f969-40d4-a9e8-c963224b2352"/>
+					<box>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+					</box>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font size="9"/>
+					</textElement>
+					<textFieldExpression><![CDATA[$F{instansi}]]></textFieldExpression>
 				</textField>
 			</frame>
 		</band>
