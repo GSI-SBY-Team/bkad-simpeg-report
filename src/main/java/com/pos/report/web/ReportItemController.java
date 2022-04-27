@@ -141,4 +141,19 @@ public class ReportItemController {
 
         reportService.generateReport("permintaan-pemberian-cuti", "pdf", parameters, response, "permintaan-pemberian-cuti");
     }
+    
+    @RequestMapping(value = "report-jumlah-cuti*", method = RequestMethod.GET)
+    public void jumlahCutiPegawai(HttpServletRequest request, HttpServletResponse response) {
+        String uri = request.getRequestURI();
+        String format = uri.substring(uri.lastIndexOf(".") + 1);
+        String imgPath = context.getRealPath("/img") + System.getProperty("file.separator");
+        System.out.println("uri : " + uri + ", context : " + context.getRealPath("/templates/jrxml/simpeg/"));
+        String tahun = request.getParameter("tahun");
+
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("imgPath", imgPath);
+        parameters.put("tahun", tahun);
+
+        reportService.generateReport("rekap-cuti-tahunan", "pdf", parameters, response, "rekap-jumlah-cuti");
+    }
 }
