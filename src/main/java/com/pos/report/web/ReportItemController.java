@@ -82,6 +82,16 @@ public class ReportItemController {
 
         reportService.generateReport("ItemListByKategori", format, parameters, response, "item-by-kategori");
     }
+    
+    @RequestMapping(value = "coba*", method = RequestMethod.GET)
+    public void Coba(HttpServletRequest request, HttpServletResponse response) {
+        String uri = request.getRequestURI();
+        String format = uri.substring(uri.lastIndexOf(".") + 1);
+
+        Map<String, Object> parameters = new HashMap<>();
+
+        reportService.generateReport("coba", "pdf", parameters, response, "coba");
+    }
 
     @RequestMapping(value = "report-kepegawaian*", method = RequestMethod.GET)
     public void Kepegawaian(HttpServletRequest request, HttpServletResponse response) {
@@ -129,6 +139,21 @@ public class ReportItemController {
         parameters.put("imgPath", imgPath);
         parameters.put("id_ijin", id_ijin);
 
-        reportService.generateReport("permintaan-pemberian-cuti", "pdf", parameters, response, "pemberian-cuti");
+        reportService.generateReport("permintaan-pemberian-cuti", "pdf", parameters, response, "permintaan-pemberian-cuti");
+    }
+    
+    @RequestMapping(value = "report-jumlah-cuti*", method = RequestMethod.GET)
+    public void jumlahCutiPegawai(HttpServletRequest request, HttpServletResponse response) {
+        String uri = request.getRequestURI();
+        String format = uri.substring(uri.lastIndexOf(".") + 1);
+        String imgPath = context.getRealPath("/img") + System.getProperty("file.separator");
+        System.out.println("uri : " + uri + ", context : " + context.getRealPath("/templates/jrxml/simpeg/"));
+        String tahun = request.getParameter("tahun");
+
+        Map<String, Object> parameters = new HashMap<>();
+        parameters.put("imgPath", imgPath);
+        parameters.put("tahun", tahun);
+
+        reportService.generateReport("rekap-cuti-tahunan", "pdf", parameters, response, "rekap-jumlah-cuti");
     }
 }

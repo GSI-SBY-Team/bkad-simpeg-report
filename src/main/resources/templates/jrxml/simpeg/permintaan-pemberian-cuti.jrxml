@@ -398,7 +398,7 @@ Malang]]></text>
 						<font size="9" isBold="false"/>
 						<paragraph leftIndent="8"/>
 					</textElement>
-					<text><![CDATA[3. cuti Sakit]]></text>
+					<text><![CDATA[3. Cuti Sakit]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="0" y="47" width="150" height="18" uuid="2605224b-ed50-4eb6-ba12-745f733ee733"/>
@@ -422,7 +422,9 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{cuti_tahunan}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
@@ -433,7 +435,9 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{cuti_sakit}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
@@ -444,7 +448,9 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{cuti_alasan_penting}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
@@ -455,7 +461,9 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{cuti_melahirkan}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
@@ -466,7 +474,9 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{cuti_besar}]]></textFieldExpression>
 				</textField>
 				<staticText>
@@ -509,7 +519,7 @@ Malang]]></text>
 						<font size="9" isBold="false"/>
 						<paragraph leftIndent="8"/>
 					</textElement>
-					<text><![CDATA[4. Cuti di Luar Tanggungan Negara]]></text>
+					<text><![CDATA[6. Cuti di Luar Tanggungan Negara]]></text>
 				</staticText>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
 					<reportElement x="470" y="47" width="110" height="18" uuid="2260a3ac-5cb1-494b-9e90-675bf8a75102"/>
@@ -519,7 +529,9 @@ Malang]]></text>
 						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
-					<textElement textAlignment="Center" verticalAlignment="Middle"/>
+					<textElement textAlignment="Center" verticalAlignment="Middle">
+						<font fontName="DejaVu Sans" size="8"/>
+					</textElement>
 					<textFieldExpression><![CDATA[$F{cltn}]]></textFieldExpression>
 				</textField>
 			</frame>
@@ -1461,12 +1473,12 @@ Malang]]></text>
 					<textFieldExpression><![CDATA[$F{ditolak}]]></textFieldExpression>
 				</textField>
 				<textField isStretchWithOverflow="true" isBlankWhenNull="true">
-					<reportElement x="290" y="45" width="289" height="18" uuid="28ce4192-f969-40d4-a9e8-c963224b2352"/>
+					<reportElement x="290" y="45" width="290" height="18" uuid="28ce4192-f969-40d4-a9e8-c963224b2352"/>
 					<box>
-						<topPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<leftPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<bottomPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
-						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
+						<topPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<leftPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<bottomPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
+						<rightPen lineWidth="0.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
 						<font size="9"/>
