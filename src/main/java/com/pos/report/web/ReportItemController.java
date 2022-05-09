@@ -109,7 +109,7 @@ public class ReportItemController {
         parameters.put("kode_unor", kode_unor);
         parameters.put("kode_status", kode_status);
 
-        reportService.generateReport("rep-kepegawaian", "pdf", parameters, response, "kepegawaian");
+        reportService.generateReport("rep-kepegawaian", format, parameters, response, "kepegawaian");
     }
     
     @RequestMapping(value = "report-permohonan-ijin*", method = RequestMethod.GET)
@@ -154,6 +154,6 @@ public class ReportItemController {
         parameters.put("imgPath", imgPath);
         parameters.put("tahun", tahun);
 
-        reportService.generateReport("rekap-cuti-tahunan", "pdf", parameters, response, "rekap-jumlah-cuti");
+        reportService.generateReport("rekap-cuti-tahunan", format, parameters, response, "rekap-jumlah-cuti");
     }
 }

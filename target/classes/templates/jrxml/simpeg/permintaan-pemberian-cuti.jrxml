@@ -398,7 +398,7 @@ Malang]]></text>
 						<font size="9" isBold="false"/>
 						<paragraph leftIndent="8"/>
 					</textElement>
-					<text><![CDATA[3. cuti Sakit]]></text>
+					<text><![CDATA[3. Cuti Sakit]]></text>
 				</staticText>
 				<staticText>
 					<reportElement x="0" y="47" width="150" height="18" uuid="2605224b-ed50-4eb6-ba12-745f733ee733"/>
@@ -436,7 +436,7 @@ Malang]]></text>
 						<rightPen lineWidth="1.0" lineStyle="Solid" lineColor="#000000"/>
 					</box>
 					<textElement textAlignment="Center" verticalAlignment="Middle">
-						<font fontName="DejaVu Sans" size="10"/>
+						<font fontName="DejaVu Sans" size="8"/>
 					</textElement>
 					<textFieldExpression><![CDATA[$F{cuti_sakit}]]></textFieldExpression>
 				</textField>
